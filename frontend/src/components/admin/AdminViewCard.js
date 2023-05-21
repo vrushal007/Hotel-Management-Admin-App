@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import img1 from '../../image/img1.jpg'
@@ -7,6 +6,7 @@ import classes from './AdminViewCard.module.css'
 import Card from '../UI/Card'
 import Modal from '../UI/Modal'
 import Loading from '../UI/Loading'
+import {cancelBooking} from '../../utils/utils'
 
 function AdminViewCard(props) {
     const { _id } = props.item
@@ -43,9 +43,8 @@ function AdminViewCard(props) {
     }
     const deleteHandler = async () => {
         setLoading(true)
-        const cancelBooking = await axios.delete(`http://localhost:3001/user/cancelBooking/${_id}`)
-        
-        console.log(cancelBooking.data)
+        const cancelled = await cancelBooking(_id)
+        console.log("cancelled. Refunded Amount",cancelled.data.refundedAmount)
         setLoading(false)
         setPopupIsShown(false)
         navigate('/admin')

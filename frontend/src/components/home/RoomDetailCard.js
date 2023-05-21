@@ -11,12 +11,6 @@ function RoomDetailCard(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     navigate(`/booking/${props.item.roomType}/${props.item.roomNo}`)
-    // dispatch(roomActions.bookingRoom({
-    //   roomType: props.item.roomType,
-    //   roomNo: props.item.roomNo,
-    //   price: props.item.price
-    // }))
-    // navigate('/booking')
   }
   return (
     <div className={classes.container} >
