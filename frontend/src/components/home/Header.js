@@ -5,7 +5,7 @@ import classes from './Header.module.css'
 function Header () {
   return (
     <header className={classes.header}>
-      <Link to='/'><div className={classes.logo}>Room Booking Admin Panel</div></Link>
+      <Link to='/' style={{textDecoration:'none'}}><div className={classes.logo}>Room Booking Admin Panel</div></Link>
       <nav className={classes.nav}>
         <ul>
           <li>
