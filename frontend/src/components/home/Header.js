@@ -1,17 +1,17 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import React from 'react'
 import classes from './Header.module.css'
 
 function Header () {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Room Booking Admin Panel</div>
+      <Link to='/'><div className={classes.logo}>Room Booking Admin Panel</div></Link>
       <nav className={classes.nav}>
         <ul>
           <li>
             <NavLink
               to='/'
-              className={({ isActive }) => (isActive ? 'active' : undefined)}
+              className={({ isActive }) => (isActive ? classes.active : undefined)}
             >
               Home
             </NavLink>
