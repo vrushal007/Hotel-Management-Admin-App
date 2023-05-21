@@ -1,10 +1,20 @@
 const route = require('express').Router()
 const Room = require("../model/room")
-const BookRoom = require('../model/bookedRoom')
+const User = require('../model/user')
 
 route.get('/allRooms',async(req,res)=>{
-    const allRooms = await BookRoom.find()
+    const allRooms = await Room.find()
     res.json(allRooms)
+})
+
+route.get('/getRoom',async(req,res)=>{
+    const room = await Room.findOne({roomNo:req.headers.roomno})
+    res.json(room)
+})
+
+route.get('/getUser',async(req,res)=>{
+    const user = await User.findById(req.headers.id)
+    res.json(user)
 })
 
 route.get('/allUsers',async (req,res)=>{
@@ -13,17 +23,7 @@ route.get('/allUsers',async (req,res)=>{
 })
 
 route.post('/createRoom',async (req,res)=>{
-    const roomA = new Room({
-        roomType: req.body.roomType,
-        availableRooms: req.body.availableRooms,
-        price: req.body.price,
-    })
-    const result = await roomA.save()
-    res.json(result)
-})
-
-route.post('/createBookRoom',async (req,res)=>{
-    const bookRoom = new BookRoom({
+    const bookRoom = new Room({
         roomNo:req.body.roomNo,
         roomType: req.body.roomType,
         price:req.body.price

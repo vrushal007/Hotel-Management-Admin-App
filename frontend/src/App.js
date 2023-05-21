@@ -14,8 +14,8 @@ function App() {
         <Routes>
             <Route path='/createRoom' element={<AddRoom />} />
             <Route path="/" element={<Layout />}/>
-            <Route path="editForm" element={<EditForm />} />
-            <Route path="/booking" element={<RegistrationForm />}/>
+            <Route path="editUser/:userId" element={<EditForm />} />
+            <Route path="/booking/:roomType/:roomNo" element={<RegistrationForm />}/>
             <Route path="/admin" element={<AdminView />}/>
         </Routes>
     </div>

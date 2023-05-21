@@ -2,28 +2,24 @@ const mongoose = require("mongoose")
 const userSchema = new mongoose.Schema({
     email:{
         type:String,
-        required:true
     },
-    startTime:{
-        type:String,
+    startDate:{
+        type:Date,
     },
-    endTime:{
-        type:String
+    endDate:{
+        type:Date
     },
     roomNo:{
         type:String
     },
     roomType:{
         type:String,
-        required:true
     },
     paymentMode:{
         type:String,
-        required:true
     },
     amount:{
         type:Number,
-        required:true
     }
 })
 

@@ -1,30 +1,36 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import AdminViewCard from './AdminViewCard'
-import "./AdminView.css"
+import Loading from '../UI/Loading'
 
 function AdminView() {
     const [bookedList,setBookedList] = useState([])
-   
+    const [loading,setLoading] = useState(false)
     useEffect(()=>{
         const defaultFetch = async() => {
+            setLoading(true)
             const data = await axios.get('http://localhost:3001/user/upcomingBooking')
+            setLoading(false)
             setBookedList(data.data)
         }
         defaultFetch()
     },[])
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-    },[])
+    // },[])
     const blurHandler = async (e) => {
         if(e.target.value==="past"){
+            setLoading(true)
             const data = await axios.get('http://localhost:3001/user/pastBooking')
+            setLoading(false)
             setBookedList(data.data)
             // console.log(data)
         }
         if(e.target.value==="future"){
+            setLoading(true)
             const data = await axios.get('http://localhost:3001/user/upcomingBooking')
+            setLoading(false)
             setBookedList(data.data)
             // console.log(data)
         }
@@ -41,7 +47,7 @@ function AdminView() {
             <option value="future">Upcoming Booking</option>
             <option value="past">Past Booking</option>
         </select>
-        {content}
+        {loading ? <Loading /> : content}
     </div>
   )
 }

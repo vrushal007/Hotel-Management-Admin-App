@@ -1,0 +1,53 @@
+.form{
+    display: flex;
+    justify-content: center;
+    padding: 0 3rem;
+    margin-top: 1rem;
+}
+.form form{
+    width: 50%;
+    background-color: #f3fff2;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form form label {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form label select{
+    width: 40%;
+    margin: 0 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.form form input[type=text],
+.form form input[type=email],
+.form form input[type=date],
+.form form input[type=number]{
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 0 0;
+}

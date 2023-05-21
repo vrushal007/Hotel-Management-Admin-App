@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    justify-content: space-evenly;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,35 @@
+.card {
+    width: 100%;
+    display: flex;
+    background-color: #f3fff2;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: 0.3s;
+    padding: 2rem;
+    margin: 1rem;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 800px) {
+    .card {
+        display: flex;
+        width: 80%;
+        align-items: center;
+    }
+}
