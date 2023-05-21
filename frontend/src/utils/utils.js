@@ -4,7 +4,9 @@ const SERVER_URL =
   process.env.SERVER_URL || 'https://hmadmin-server.onrender.com'
 
 export const createRoom = async (roomType, roomNo, price) => {
-  const data = await axios.post(`${SERVER_URL}/admin/createRoom`)
+  const data = await axios.post(`${SERVER_URL}/admin/createRoom`,{
+    roomType, roomNo, price
+  })
   return data
 }
 
